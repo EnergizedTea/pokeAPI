@@ -5,7 +5,8 @@ import db from '../firebase/firebaseConfig'
 import { collection, doc, addDoc, onSnapshot } from 'firebase/firestore'
 
 
-export const Pokedex = () => {
+export const 
+Pokedex = () => {
     const [pokemons, setPokemons] = useState([])
     const [team, setTeam] = useState([])
     const [page, setPage] = useState(1)
@@ -51,17 +52,20 @@ export const Pokedex = () => {
 
   return (
     <div>
-        <div>
-                {
-                    page != 1 && <button onClick={() => setPage(page - 1)}>Anterior</button>
-                }
-                <button onClick={() => setPage(page + 1)}>Siguiente</button>
-        </div>
-                <br></br>
+        <br></br>
+        <br></br>
         <div className = 'guarderia'>   
             {pokemons.map((pokemon) => {
                 return <Pokemon key={pokemon.id} pokemon={pokemon}/>
             })}
+        </div>
+        <br></br>
+        <br></br>
+        <div class>
+                {
+                    page != 1 && <button onClick={() => setPage(page - 1)}>Anterior</button>
+                }
+                <button onClick={() => setPage(page + 1)}>Siguiente</button>
         </div>
     </div>
   )
