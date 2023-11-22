@@ -1,8 +1,10 @@
 #root {
+/*aqui yace el error que no se solucionar bien*/
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: #c56c4e;
 }
 
 .logo {
@@ -12,7 +14,7 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #C70039);
+  filter: drop-shadow(0 0 2em #B31312);
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #F94C10);

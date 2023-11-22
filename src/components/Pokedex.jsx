@@ -2,7 +2,13 @@ import React, {useState, useEffect} from 'react'
 import { Pokemon } from './Pokemon'
 import axios from 'axios'
 import db from '../firebase/firebaseConfig'
-import { collection, doc, addDoc, onSnapshot } from 'firebase/firestore'
+import { collection, doc, addDoc, onSnapshot, setDoc } from 'firebase/firestore'
+
+/*await setDoc(doc(db, "teams", "LA"), {
+    name: "Los Angeles",
+    state: "CA",
+    country: "USA"
+  });*/
 
 
 export const 
@@ -10,8 +16,8 @@ Pokedex = () => {
     const [pokemons, setPokemons] = useState([])
     const [team, setTeam] = useState([])
     const [page, setPage] = useState(1)
-
     const url = `https://pokeapi.co/api/v2/pokemon?limit=20&offset=${(page - 1) * 20}`
+    
     useEffect(() => {
         axios.get(url).then((response) =>{
            // setPokemons(response.data.results)
@@ -49,7 +55,7 @@ Pokedex = () => {
             console.log(snapshot.data(snapshot.map()))
         })
     }, [])//la lista vacia causa que esto solo suceda una vez
-
+    
   return (
     <div>
         <br></br>
